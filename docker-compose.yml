@@ -1,0 +1,10 @@
+services:
+  azure-openai-proxy:
+    image: registry.cn-heyuan.aliyuncs.com/leo03w/azure-openai-proxy:v1.0.1
+    container_name: azure-openai-proxy
+    build: .
+    ports:
+      - "7531:8080"
+    environment:
+      AZURE_OPENAI_ENDPOINT: https://hakko-gpt-south-india.openai.azure.com
+      AZURE_OPENAI_MODEL_MAPPER: gpt-4o=gpt-4o-lastest

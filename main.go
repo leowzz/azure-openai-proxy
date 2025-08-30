@@ -82,7 +82,7 @@ func handleOptions(c *gin.Context) {
 	// BUGFIX: fix options request, see https://github.com/diemus/azure-openai-proxy/issues/1
 	c.Header("Access-Control-Allow-Origin", "*")
 	c.Header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
-	c.Header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+	c.Header("Access-Control-Allow-Headers", "*")
 	c.Status(200)
 	return
 }
@@ -92,7 +92,7 @@ func handleAzureProxy(c *gin.Context) {
 	if c.Request.Method == http.MethodOptions {
 		c.Header("Access-Control-Allow-Origin", "*")
 		c.Header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
-		c.Header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+		c.Header("Access-Control-Allow-Headers", "*")
 		c.Status(200)
 		return
 	}

@@ -7,8 +7,8 @@ COPY . .
 RUN go build
 
 # Final step
-FROM debian:buster-slim
-RUN set -x && apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+FROM registry.cn-heyuan.aliyuncs.com/leo03w/debian:12-slim-chsrc
+RUN set -x && apt-get update && apt-get install -y \
     ca-certificates && \
     rm -rf /var/lib/apt/lists/* \
 
